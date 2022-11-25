@@ -11,7 +11,12 @@ const $$=(selector)=>{
 
 const createElement=(tagName, className, content)=>{
     const newElement=document.createElement(tagName);
-    newElement.setAttribute('class',className);
-    newElement.innerHTML=`${content}`;
+    if (className){
+        newElement.setAttribute('class',className);
+    }
+    if (content){
+        newElement.innerHTML=`${content}`;
+
+    }    
     return newElement;
-}
+};
